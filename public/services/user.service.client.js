@@ -46,6 +46,7 @@
         }
 
         function findAllUsers(callback) {
+            console.log("in user.service.client.js");
             callback(userInfo);
         }
 

@@ -11,7 +11,8 @@
                     controller: "RegisterController"
                 })
                 .when("/admin", {
-                    templateUrl: "views/admin/admin.view.html"
+                    templateUrl: "views/admin/admin.view.html",
+                    controller: "AdminController"
                 })
                 .when("/login", {
                     templateUrl: "views/users/login.view.html",
@@ -27,6 +28,10 @@
                 .when("/search", {
                     templateUrl: "views/search/search.view.html",
                     controller: "PlaceController"
+                })
+                .when("/userdetils", {
+                    templateUrl: "views/admin/user.details.html",
+                    controller: "UserDetailController"
                 })
                 .when("/restaurants", {
                     templateUrl: "views/admin/restaurants.view.html"
