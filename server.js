@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
-//require("./public/assignment/server/services/user.service.server.js")(app);
+require("./public/server/services/user.service.server.js")(app);
 //require("./public/assignment/server/services/forms.service.server.js")(app);
 //require("./public/assignment/server/services/field.service.server.js")(app);
 

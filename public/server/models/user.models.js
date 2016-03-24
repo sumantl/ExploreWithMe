@@ -3,7 +3,7 @@ var users = require("./user.mock.json");
 module.exports = function(){
 
     var api = {
-        findUserByCredentails: findUserByCredentails,
+        findUserByCredentials: findUserByCredentials,
         findAllUsers: findAllUsers,
         createUser: createUser,
         deleteUserById: deleteUserById,

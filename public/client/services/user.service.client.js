@@ -17,8 +17,8 @@
 
         function findUserByCredentials(username, password) {
             console.log("in user.sevice.client.js");
-            return $http.get("/api/user?username="+username+"password="+password);
-            <!--var result={};
+            return $http.get('/api/user?username='+username+'&password='+password);
+            /*var result={};
             for(var i=0;i<userInfo.length;i++){
                 if(userInfo[i].username==username&&userInfo[i].password==password) {
                     console.log("User Found");
@@ -29,7 +29,8 @@
             }
 
             callback(result);
--->
+            */
+
         }
 
         function findAllUsers() {
@@ -37,34 +38,39 @@
             return $http.get("/api/user");
         }
 
-        function createUser(newUser){
+        function createUser(newUser) {
             console.log("in user.service.client.js");
-            return $http.post("/api/user"+newUser);
+            return $http.post("/api/user" + newUser);
+        }
 
-            <!-- var tempUser ={}
+            /*var tempUser ={}
              angular.copy(user,tempUser);
              tempUser._id = (new Date).getTime();
              userInfo.push(tempUser);
-             callback(tempUser);-->
-        }
+             callback(tempUser);
+             */
 
         function deleteUserById(userId) {
             console.log("in user.service.client.js");
-            return $http.delete("/api/user"+userId);
-            <!-- for(var i=0;i<userInfo.length;i++){
+            return $http.delete("/api/user" + userId);
+        }
+        /*
+            for(var i=0;i<userInfo.length;i++){
                 if(userInfo[i]._id == userId){
                     userInfo.splice(i,1);
                     break;
                 }
             }
-            callback(userInfo);-->
-        }
+            callback(userInfo);
+           */
+
 
         function updateUser(userId, user) {
             console.log("in user.service.client.js");
-            return $http.put("/api/user"+userId,user);
-
-            <!-- var result = null;
+            return $http.put("/api/user/" + userId, user);
+        }
+        /*
+             var result = null;
             for(var i=0;i<userInfo.length;i++){
 
                 if(userInfo[i]._id == userId){
@@ -73,7 +79,9 @@
                     break;
 }
             }
-            callback(result);-->
-        }
+            callback(result);
+
+            */
+
     }
 })();

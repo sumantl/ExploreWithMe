@@ -8,15 +8,16 @@
         $scope.update=function(user){
 
             var userId=$rootScope.user._id;
-            UserService.updateUser(userId,user,
-                function(response){
-                    $rootScope.user=response;
-                    console.log("Profile");
-                }
-            )
+            UserService.updateUser(userId, user)
+                .then(function(response){
+                    console.log(response.config.data);
 
-            $location.path('/profile');
-            }
+                    $rootScope.user=response.config.data;
+                    console.log("Profile");
+                    $location.path('/profile');
+                }
+            );
+        }
 
 
 

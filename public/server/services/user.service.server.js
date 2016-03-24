@@ -1,11 +1,13 @@
 var userModel = require("../models/user.models.js")();
 
 module.exports = function(app){
-    api.get("/api/user?user=username$password=password", getUsers);
-    api.get("api/user?", getUsers);
-    api.post("/api/user", registerUser);
-    api.delete("/api/user/:id", deleteUser);
-    api.put("/api/user/:id", updateUser);
+
+    app.get('/api/user', getUsers);
+    app.get('/api/user?user=username&password=password', getUsers);
+
+    app.post('/api/user', registerUser);
+    app.delete('/api/user/:id', deleteUser);
+    app.put('/api/user/:id', updateUser);
 
     function getUsers(req, res){
         if(req.query.username){
