@@ -5,12 +5,7 @@
 
     function CommentService ($http) {
 
-        var commentsList=[];
-        commentsList=[
-            {"_id": "000", "name": "I do not like this", "userId": 123},
-            {"_id": "001", "name": "I am loving it", "userId": 123},
-            {"_id": "020", "title": "Leh", "userId": 234},
-        ];
+
 
         var api = {
             createCommentForUser: createCommentForUser,
