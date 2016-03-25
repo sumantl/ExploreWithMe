@@ -9,13 +9,11 @@
         $scope.search = search;
         function search(query, loc) {
 
-
-            YelpService.searchYelp(query, $rootScope.searchCount, loc, function(response){
-                $scope.scopeFoodSearchList = response;
+        YelpService.searchYelp(query, loc)
+                .then(function(response){
+                $scope.scopeFoodSearchList = response.data;
                 console.log($scope.scopeFoodSearchList);
-                $rootScope.searchCount++;
-                console.log($rootScope.searchCount);
-            });
+                });
         }
     }
 })();

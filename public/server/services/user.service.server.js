@@ -24,7 +24,10 @@ module.exports = function(app){
     }
 
     function registerUser(req, res){
+        var user = req.body;
+        console.log(user);
         var newUser = userModel.createUser(user);
+        console.log(newUser);
         res.json(newUser);
     }
 
@@ -34,7 +37,13 @@ module.exports = function(app){
     }
 
     function updateUser(req, res){
-        var newUser = userModel.updateUserById(req.params._id, user);
+        var user = req.body;
+        console.log("update");
+        console.log(user);
+        console.log(req.params.id);
+        var newUser = userModel.updateUserById(req.params.id, user);
+        console.log("updated user");
+        console.log(newUser);
         res.json(newUser);
     }
 };

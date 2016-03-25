@@ -13,13 +13,21 @@
 </form>
 -->
 <form class="form-horizonatal">
+
+    <div class="form-group">
+        <label for="inputQuery" class="col-sm-2 control-label">Search</label>
+
+        <div class="col-sm-8">
+            <input ng-model="query" type="text" class="form-control" id="inputQuery" placeholder="Pizza">
+        </div>
+    </div>
     <div class="col-sm-10">
         <div class="form-group">
             <button ng-click="search(query)" class="btn btn-primary btn-block">View Details</button>
         </div>
     </div>
-
 </form>
+
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 
 <div class="col-md-4" id="map"></div>

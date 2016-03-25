@@ -43,7 +43,7 @@ module.exports = function(){
         return users;
     }
 
-    function updateUserById(userId, user){
+    function updateUserById(userId, preUser){
         console.log("in user.model.js");
         for(user in users){
             if(users[user]._id==userId){
@@ -54,6 +54,6 @@ module.exports = function(){
                 users[user].role = user.role;
             }
         }
-        return user;
+        return preUser;
     }
 };

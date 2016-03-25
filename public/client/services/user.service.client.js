@@ -35,12 +35,12 @@
 
         function findAllUsers() {
             console.log("in user.service.client.js");
-            return $http.get("/api/user");
+            return $http.get('/api/user');
         }
 
         function createUser(newUser) {
-            console.log("in user.service.client.js");
-            return $http.post("/api/user" + newUser);
+            console.log("In Create User");
+            return $http.post('/api/user', newUser);
         }
 
             /*var tempUser ={}

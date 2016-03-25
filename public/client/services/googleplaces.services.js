@@ -663,7 +663,8 @@
            // newGoogle : newGoogle,
             initMap : initMap,
             render : render,
-            initAutocomplete: initAutocomplete
+            initAutocomplete: initAutocomplete,
+            searchPlaces : searchPlaces
         };
         return api;
 
@@ -710,7 +711,29 @@
 
         }
 
+
+        function searchPlaces(query){
+            console.log(query);
+            return $http.get('/api/places/search?search='+query);
+        }
+
         function initAutocomplete(callback) {
+
+            var myLatLng = {lat: -25.363, lng: 131.044};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+
+            /*
+
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: -33.8688, lng: 151.2195},
                 zoom: 13,
@@ -772,6 +795,8 @@
                 map.fitBounds(bounds);
                 callback(places);
             });
+
+            */
         }
          /*
 

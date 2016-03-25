@@ -7,7 +7,7 @@ angular.module('ExploreWithMeApp')
 
 
         GooglePlaces.initAutocomplete(function(response){
-            $scope.scopePlaceList = response;
+            //$scope.scopePlaceList = response;
             console.log(response);
         });
         $scope.search = search;
@@ -15,9 +15,12 @@ angular.module('ExploreWithMeApp')
 
         function  search(query){
 
-
-
-
+            GooglePlaces.searchPlaces(query)
+                .then(function(response){
+                    console.log(response);
+                    $scope.scopePlaceList = response.data.results;
+                    console.log(response)
+                });
         }
 
 
