@@ -715,26 +715,27 @@
         function searchPlaces(query){
             console.log(query);
             return $http.get('/api/places/search?search='+query);
+
         }
 
+        /*
+         var myLatLng = {lat: -25.363, lng: 131.044};
+
+         var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 4,
+         center: myLatLng
+         });
+
+         var marker = new google.maps.Marker({
+         position: myLatLng,
+         map: map,
+         title: 'Hello World!'
+         });
+
+         */
+
         function initAutocomplete(callback) {
-
-            var myLatLng = {lat: -25.363, lng: 131.044};
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: myLatLng
-            });
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
-
-            /*
-
-            var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: -33.8688, lng: 151.2195},
                 zoom: 13,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -796,7 +797,7 @@
                 callback(places);
             });
 
-            */
+
         }
          /*
 
