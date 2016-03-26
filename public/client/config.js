@@ -19,8 +19,12 @@
                     controller: "LoginController"
                 })
                 .when("/profile", {
-                    templateUrl: "views/users/profile.view.html",
+                    templateUrl: "views/users/myprofile.view.html",
                     controller: "ProfileController"
+                })
+                .when("/profile/:username", {
+                    templateUrl: "views/users/profile.view.html",
+                    controller: "ProfileFriendController"
                 })
                 .when("/logout", {
                     templateUrl: "views/home/home.view.html"

@@ -1,26 +1,19 @@
 (function(){
     angular
         .module('ExploreWithMeApp')
-        .controller('ProfileController',ProfileController);
+        .controller('ProfileFriendController',ProfileFriendController);
 
-    function ProfileController($scope, $rootScope, $location, UserService) {
+    function ProfileFriendController($scope, $rootScope, $routeParams, $location, UserService) {
 
-        console.log("In controller");
-        console.log($rootScope.user);
+        var username = $routeParams.username;
+        console.log(username);
 
-        $scope.update=function(user){
+        UserService.findUserByUserName(username)
+            .then(function(response){
+                console.log(response.data);
+                $scope.friend = response.data;
+            })
 
-            var userId=$rootScope.user._id;
-            UserService.updateUser(userId, user)
-                .then(function(response){
-                    console.log(response.data);
-
-                    $rootScope.user=response.data;
-                    console.log("Profile");
-                    $location.path('/profile');
-                }
-            );
-        }
 
 
 

@@ -15,6 +15,10 @@ module.exports = function(app){
                 var user = userModel.findUserByCredentials(req.query.username, req.query.password);
                 res.json(user);
             }
+            else{
+                var user = userModel.findUserByUserName(req.query.username);
+                res.json(user);
+            }
         }
         else{
             var users = [];

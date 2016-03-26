@@ -10,10 +10,16 @@
             findAllUsers: findAllUsers,
             createUser: createUser,
             deleteUserById: deleteUserById,
-            updateUser: updateUser
+            updateUser: updateUser,
+            findUserByUserName: findUserByUserName
 
         };
         return api;
+
+
+        function findUserByUserName(username){
+            return $http.get('/api/user?username='+username);
+        }
 
         function findUserByCredentials(username, password) {
             console.log("in user.sevice.client.js");

@@ -7,10 +7,18 @@ module.exports = function(){
         findAllUsers: findAllUsers,
         createUser: createUser,
         deleteUserById: deleteUserById,
-        updateUserById: updateUserById
+        updateUserById: updateUserById,
+        findUserByUserName: findUserByUserName
     };
     return api;
 
+    function  findUserByUserName(username){
+        for (index in users){
+            if (users[index].username == username){
+                return users[index];
+            }
+        }
+    }
     function findUserByCredentials(username, password){
         console.log("in user.model.js--------user: "+username+"password: "+password);
         for(user in users){
