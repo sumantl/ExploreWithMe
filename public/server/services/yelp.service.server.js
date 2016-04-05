@@ -25,6 +25,10 @@ module.exports = function(app){
             .catch(console.error);
 }
 
+    function test(){
+
+    }
+
 
 
     function searchYelp(req, res) {
