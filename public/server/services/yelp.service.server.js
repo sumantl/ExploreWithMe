@@ -23,7 +23,7 @@ module.exports = function(app){
                 res.json(data);
             })
             .catch(function (err) {
-                res.send(err);
+                console.log(err);
             });
 }
 
@@ -43,7 +43,7 @@ module.exports = function(app){
                 res.json(data);
             })
             .catch(function (err) {
-                res.send(err);
+                console.log(err);
             });
 
     }
