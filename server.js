@@ -1,3 +1,4 @@
+var Promise = require('promise');
 var express = require('express');
 
 var app = express();
