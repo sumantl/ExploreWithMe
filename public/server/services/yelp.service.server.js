@@ -1,6 +1,6 @@
 var Yelp = require('yelp');
 
-module.exports = function(app){
+module.exports = function(app, Promise){
 
     var yelp = new Yelp({
         consumer_key: 'r7UvikICvNylN1CbaoX5LA',

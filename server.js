@@ -17,7 +17,7 @@ app.get('/', function(req, res){
 });
 
 require("./public/server/services/user.service.server.js")(app);
-require("./public/server/services/yelp.service.server.js")(app);
+require("./public/server/services/yelp.service.server.js")(app, Promise);
 require("./public/server/services/places.service.server.js")(app);
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
