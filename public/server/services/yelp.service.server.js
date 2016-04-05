@@ -22,7 +22,9 @@ module.exports = function(app){
             .then(function (data){
                 res.json(data);
             })
-            .catch(console.error);
+            .catch(function (err) {
+                res.send(err);
+            });
 }
 
     function test(){
@@ -41,7 +43,7 @@ module.exports = function(app){
                 res.json(data);
             })
             .catch(function (err) {
-                console.error(err);
+                res.send(err);
             });
 
     }
